@@ -30,7 +30,22 @@ with mp_hands.Hands(
                 thumb = hand_landmarks.landmark[4]                      # 각 손가락 배열원소에 포인트 좌표가 저장되어 있음
                 index = hand_landmarks.landmark[8]
                 
-             
+                x=str(thumb.x)
+                
+                
+               
+                #putText()를 통해 손가락 조인트 좌표값을 표시할라고 했음
+                # 알게된점 2번재인수에서 문자열,문자만 출력가능
+                #putText()가 고정된좌표에서만 함수 사용이 가능한지 알아보기(중요)
+               
+                cv2.putText(
+                    image, x , org=(100, 100),
+                    fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1,
+                    color=255, thickness=2)
+
+               
+
+               
                 # cv2.putText(
                 #     image, text='Volume: %d' % volume, org=(10, 30),
                 #     fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1,
